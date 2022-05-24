@@ -4,10 +4,10 @@ TWT = 0;#total waiting time
 TTAT = 0#total turn around time
 for i in range(n):
     print("\nEnter:\n")
-    pcb_queue.append([input("Process ID: "),int(input("Burst Time: "))])
+    pcb_queue.append([input("Process ID: "),int(input("Burst Time: ")),int(input("Priority: "))])
     
 def key_returner(l):
-    return l[1]
+    return l[2]
 pcb_queue.sort(key=key_returner)
 
 time_elapsed = 0
@@ -19,22 +19,25 @@ for process in pcb_queue:
 
 print('\ngantt chart: ',pcb_queue)
     
-print("\nTotal Turn Around Time of the Schedule: ",(pcb_queue[-1][-1]-pcb_queue[0][2])) #last process termination time - arrival time of first process
+print("\nTotal Turn Around Time of the Schedule: ",(pcb_queue[-1][-1]-0)) #last process termination time - arrival time of first process
 
-print("\nAverage Waiting Time: ",end="") # cpu alloted time - arrival time [3] - [1]
+
 
 for process in pcb_queue:
-    TWT += process[2]#-0
-    
+    TWT += process[4]-process[1] # tat - bt
+
+print('\nTotal Waiting Time: ',TWT)
+print("\nAverage Waiting Time: ",end="") # cpu alloted time - arrival time [3] - [1]
 AWT = TWT/n
 
 print(round(AWT,3))
 
+for process in pcb_queue:
+    TTAT+= process[4]#-0
+
+print("\nTotal Turn Around Time: ",TTAT)
 print("\nAverage Turn Around Time: ",end="") # termination time - arrival time [4] - [1]
 
-for process in pcb_queue:
-    TTAT+= process[3]#-0
-    
 ATAT = TTAT/n
 
 print(round(ATAT,3),'\n')
