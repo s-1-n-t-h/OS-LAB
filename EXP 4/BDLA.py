@@ -55,5 +55,5 @@ while(len(dead_lock_avoidance_pattern)!=n):
             completed_index.append(i)
             available = [available[j] + allocated[i][j] for j in range(len(available))]
 
-print("The pattern of Process to avoid Dead lock according to Banker's algirthm is: ",dead_lock_avoidance_pattern)
+print("The pattern of Process to avoid Dead lock according to Banker's algirthm is: ","-->".join(dead_lock_avoidance_pattern))
 
