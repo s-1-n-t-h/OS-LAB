@@ -1,11 +1,11 @@
 
 def CircularWait():
     pid = input("Process ID:")
-    res = list(input('Resources: ').split(" "))
+    res = list(input('Resources in system: ').split(" "))
+    res.sort()
     mark_allocation = []
-    
+    print("Resources Available: ", res)
     while(True):
-        print("Resources Available: ",res)
         resNeeded = input("Resource Needed: ")
         if resNeeded in res:
             try:
