@@ -1,7 +1,3 @@
-from audioop import reverse
-import re
-
-
 reqSeq = list(map(int, input("Request String: ").split(" ")))
 position = int(input("Initial head position: "))
 dir = int(input("Direction 1:right 0:left : "))
