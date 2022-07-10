@@ -1,0 +1,1 @@
+{"name":"Local: SSTF","url":"/Users/venkatasaiyaswanthbattu/Documents/GitHub/OS-LAB/DISK SCHEDULING/B/SSTF.py","tests":[{"id":1657447934198,"input":"176 79 34 60 92 11 41 114\n50","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/venkatasaiyaswanthbattu/Documents/GitHub/OS-LAB/DISK SCHEDULING/B/SSTF.py","group":"local","local":true}
