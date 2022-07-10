@@ -8,7 +8,7 @@ dir = int(input("Direction 1:right 0:left : "))
 
 def SSTF(reqSeq,initPos,dir):
     seek_time = 0
-    seekSeq = [initPos]
+    seekSeq = [initPos] #set initial position into seek sequence
     if dir == 1:
         # left to right ascending
         reqSeq.sort()
