@@ -1,0 +1,1 @@
+{"name":"Local: FIFO","url":"/Users/venkatasaiyaswanthbattu/Documents/GitHub/OS-LAB/EXP 6/FIFO.py","tests":[{"id":1657372370704,"input":"3 2 1 0 3 2 4 3 2 1 0 4\n3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/venkatasaiyaswanthbattu/Documents/GitHub/OS-LAB/EXP 6/FIFO.py","group":"local","local":true}
