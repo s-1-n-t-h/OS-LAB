@@ -25,7 +25,7 @@ for i in range(n):
 print("Maximum need of resources for each process: ", max_need)
 
 # taking total resources available for each type
-total_resources.extend(list(map(int, input("Total Resources: ").split(" "))))
+total_resources.extend(list(map(int, input("Total Resources Available: ").split(" "))))
 print("Total Resources entered: ", total_resources)
 allocated_sum = [0 for i in range(len(allocated[0]))]
 
