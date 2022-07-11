@@ -46,7 +46,7 @@ for i in range(len(remaining_need)):
         remaining_need[i].append(max_need[i][j] - allocated[i][j])
 print("Remaining Need: ", remaining_need)
 while(len(dead_lock_avoidance_pattern)!=n):
-
+    
     for i in range(len(remaining_need)):
         if(available >= remaining_need[i]):
             if i in completed_index:
