@@ -1,36 +1,27 @@
-n = int(input('\nNo of Process: '))
+# no of processes
+n = int(input("Number of Process: "))
+# pcb block for each process
 pcb_queue = []
-TWT = 0;# total waiting time
-TTAT = 0# total turn around time
+# setting
+twt, ttat, time_elapsed = 0, 0, 0
+
 for i in range(n):
-    print("\nEnter:\n")
-    pcb_queue.append([input("Process ID: "),int(input("Burst Time: "))])
-    
-# no sorting as FCFS
+    print("Enter:\n")
+    pcb_queue.append([input("Process ID: "), int(
+        input("Arrival Time: ")), int(input("Burst Time: "))])
 
-time_elapsed = 0
-
-for process in pcb_queue:
-    process.append(time_elapsed)
-    time_elapsed += process[1]
-    process.append(time_elapsed)
-    
-print("\nTotal Turn Around Time of the Schedule: ",(pcb_queue[-1][-1]-pcb_queue[0][2])) #last process termination time - arrival time of first process
-
-print("\nAverage Waiting Time: ",end="") # cpu alloted time - arrival time [3] - [1]
+pcb_queue.sort(key=lambda x: x[1])
 
 for process in pcb_queue:
-    TWT += process[2]
-    
-AWT = TWT/n
+    if process[0] == pcb_queue[0][0]:
+        # if it is the first process, start time for schedule is it's arrival time
+        time_elapsed += process[1]
+    # updating waiting time of process   - time of cpu allocation - arrival time
+    twt += time_elapsed - process[1]
+    time_elapsed += process[2]  # updating time elapsed with adding burst time
+    # completion time - time of submission into queue (arrival time)
+    ttat = time_elapsed - process[1]
 
-print(round(AWT,3))
-
-print("\nAverage Turn Around Time: ",end="") # termination time - arrival time [4] - [1]
-
-for process in pcb_queue:
-    TTAT+= process[3]
-    
-ATAT = TTAT/n
-
-print(round(ATAT,3),'\n')
+print("Average Waiting Time: {} ms".format(twt/n))
+print("Average Turn Around Time: {} ms".format(ttat/n))
+print("Total Turn Around Time: {} ms".format(time_elapsed-pcb_queue[0][1]))
