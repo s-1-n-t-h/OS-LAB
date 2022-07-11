@@ -22,9 +22,10 @@ def LRU(rString, fSize):
             for j in leastUsed:
                 pg_no = j[0]
                 if pg_no in ram:
-                    ram.remove(pg_no)
+                    index = ram.index(pg_no)
+                    ram.pop(index)
                     dict[rString[i]] = datetime.now()
-                    ram.append(rString[i])
+                    ram.insert(index,rString[i])
                     count += 1
                     break
                 
