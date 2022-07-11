@@ -16,11 +16,14 @@ for process in pcb_queue:
     if process[0] == pcb_queue[0][0]:
         # if it is the first process, start time for schedule is it's arrival time
         time_elapsed += process[1]
+    #if no process available by that time in queue
+    if process[1] > time_elapsed: 
+        time_elapsed = process[1]
     # updating waiting time of process   - time of cpu allocation - arrival time
     twt += time_elapsed - process[1]
     time_elapsed += process[2]  # updating time elapsed with adding burst time
     # completion time - time of submission into queue (arrival time)
-    ttat = time_elapsed - process[1]
+    ttat = abs(time_elapsed - process[1])
 
 print("Average Waiting Time: {} ms".format(twt/n))
 print("Average Turn Around Time: {} ms".format(ttat/n))

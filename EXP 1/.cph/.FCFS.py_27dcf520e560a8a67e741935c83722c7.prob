@@ -1,0 +1,1 @@
+{"name":"Local: FCFS","url":"/Users/venkatasaiyaswanthbattu/Documents/GitHub/OS-LAB/EXP 1/FCFS.py","tests":[{"id":1657543965569,"input":"4\na\n0\n2\nb\n1\n2\nc\n5\n3\nd\n6\n4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/venkatasaiyaswanthbattu/Documents/GitHub/OS-LAB/EXP 1/FCFS.py","group":"local","local":true}

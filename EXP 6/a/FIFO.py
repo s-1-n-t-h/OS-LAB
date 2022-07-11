@@ -16,8 +16,8 @@ def FIFO(rString,fSize):
             ram.append(rString[i])
             count += 1
         else:
-            leastUsed = sorted(dict.items(), key=lambda x: x[1])
-            for j in leastUsed:
+            firstIn = sorted(dict.items(), key=lambda x: x[1])
+            for j in firstIn:
                 pg_no = j[0]
                 if pg_no in ram:
                     index = ram.index(pg_no)
