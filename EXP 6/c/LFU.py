@@ -30,13 +30,14 @@ def LFU(rString, fSize):
                     pg_no = k[0]
                     if (pg_no in ram):
                         flag = 1
-                        ram.remove(pg_no)
+                        index = ram.index(pg_no)
+                        ram.pop(index)
                         dict[rString[i]] = datetime.now()
-                        ram.append(rString[i])
+                        ram.insert(index,rString[i])
                         count += 1
                         break
                 if flag == 1:
                     break
     return count
 
-print("\nLFU: ", LFU(rString, fSize))
+print("\nPage Faults using LFU: ", LFU(rString, fSize))

@@ -30,7 +30,7 @@ def FIFO(rString,fSize):
 
 
     
-print("\nFIFO: ",FIFO(rString,fSize))
+print("\nPage Faults using FIFO: ",FIFO(rString,fSize))
         
 
 

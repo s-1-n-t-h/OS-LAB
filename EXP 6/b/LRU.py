@@ -31,4 +31,4 @@ def LRU(rString, fSize):
                 
     return count
         
-print("\nLRU: ", LRU(rString, fSize))
+print("\nPage Faults using LRU: ", LRU(rString, fSize))
