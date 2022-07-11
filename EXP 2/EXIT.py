@@ -1,19 +1,14 @@
-#importing the os module
+import sys
 import os
-#creating a child process
 
 pid = os.fork()
 
 if pid>0:
-    print("\nThis is the main parent process: ")
-    #wait for child process to terminate
-    info = os.wait()#os.waitpid(pid,0) #returns a tuple containing pid & exit status of child process
-    if os.WIFEXITED(info[1]):
-        exit_code = os.WEXITSTATUS(info[1])
-        print("Exit code of the child: ",exit_code)
-
+    print("In Parent Process: ",os.getpid())
+    status = os.wait()
+    print("child process ID: ",pid)
+    sys.exit("\nExiting Parent Process...\n")
 else:
-    print("This is child process:")
-    print("PID of child process is: ",os.getpid())
-    print("Child is now exiting..")
-os._exit(os.EX_OK) #terminates the calling process immediately
+    print("In Child Process: ",os.getpid())
+    print("Parent Process ID: ",os.getppid())
+    sys.exit('\nExiting Child Process...\n')

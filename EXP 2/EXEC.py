@@ -18,4 +18,4 @@ exec('print(factorial(5))')
 
 #5
 
-exec("print lclt()", {"lclt":localtime})
+exec("print(lclt())", {"lclt":localtime})
