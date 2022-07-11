@@ -12,11 +12,6 @@ program = 'a = 5\nb = 10\nprint("Sum = ",a+b)'
 
 exec(program)
 
-#3
-
-program = input("Enter a Program: ")
-exec(program)
-
 #4
 
 exec('print(factorial(5))')
