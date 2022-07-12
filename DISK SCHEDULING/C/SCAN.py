@@ -21,5 +21,5 @@ def SSTF(reqSeq,initPos,dir):
     return (seek_time,seekSeq)
 
 tup = SSTF(reqSeq,position,dir)
-print("FCFS Seek Time: ",tup[0])
+print("SCAN Seek Time: ",tup[0])
 print("Seek Sequence: ",tup[1])
